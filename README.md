@@ -80,7 +80,7 @@ All endpoints run alongside the web dashboard on port `8050`:
 
 ### 2. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/student-dropout-risk-analyzer.git
+git clone https://github.com/vijayabaskaran17/student-dropout-risk-analyzer.git
 cd student-dropout-risk-analyzer
 ```
 
