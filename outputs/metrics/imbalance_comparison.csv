@@ -1,0 +1,4 @@
+Strategy,Recall,Precision,F1,ROC_AUC,"Cost (FN=5, FP=1)"
+1. Baseline (No Balancing),0.3824,0.6279,0.4754,0.7881,1170.0
+2. SMOTE (Train Set Only),0.5212,0.5428,0.5318,0.7899,1000.0
+"3. Cost-Sensitive (class_weight=""balanced"")",0.3371,0.6611,0.4465,0.7858,1231.0
