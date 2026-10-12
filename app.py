@@ -1746,6 +1746,9 @@ def manage_db_actions(n_seed, n_refresh, n_clear):
 if __name__ == "__main__":
     print("\n" + "=" * 80)
     print("STARTING STUDENT DROPOUT RISK ANALYZER APPLICATION")
-    print("Running on http://127.0.0.1:8050/")
+    port = int(os.environ.get("PORT", 8050))
+    host = os.environ.get("HOST", "0.0.0.0")
+    print(f"Running on http://{host}:{port}/")
     print("=" * 80 + "\n")
-    app.run(host="127.0.0.1", port=8050, debug=False)
+    app.run(host=host, port=port, debug=False)
+
