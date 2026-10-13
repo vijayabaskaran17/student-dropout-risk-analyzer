@@ -15,6 +15,7 @@ Usage:
     history = db_manager.get_prediction_history(limit=50)
 """
 
+import os
 from datetime import datetime
 from pymongo import MongoClient, DESCENDING
 from bson import ObjectId
@@ -28,10 +29,10 @@ class MongoDBManager:
     CRUD for students & predictions, and analytics queries.
     """
 
-    def __init__(self, uri="mongodb://localhost:27017", db_name="student_dropout_db"):
-        """Initialize MongoDB connection."""
-        self.uri = uri
-        self.db_name = db_name
+    def __init__(self, uri=None, db_name=None):
+        """Initialize MongoDB connection with environment variable support."""
+        self.uri = uri or os.environ.get("MONGODB_URI", "mongodb://localhost:27017")
+        self.db_name = db_name or os.environ.get("MONGODB_DB_NAME", "student_dropout_db")
         self.client = None
         self.db = None
         self._connected = False
